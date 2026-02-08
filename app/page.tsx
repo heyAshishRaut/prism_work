@@ -8,7 +8,6 @@ import UpskillTeam from "@/app/components/section/upskillTeam"
 import Footer from "@/app/components/section/footer"
 import PrismAvatars from "@/app/components/section/prismAvatars"
 import Pricing from "@/app/components/section/pricing"
-import ParticleEffect from "@/app/components/section/particleEffect"
 
 export default function Home() {
 
