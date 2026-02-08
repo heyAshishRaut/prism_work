@@ -3,6 +3,7 @@ import Image from "next/image"
 import theProblemIcon from "@/public/images/theProblemIcon.webp"
 import SectionHeading from "@/app/components/ui/sectionHeading"
 import Text16px from "@/app/components/ui/text16px"
+import ResponsiveProblemElement from "@/app/components/uiComponents/theProblemAnimatedElement";
 
 interface TheProblemSectionItems {
     icon: any
@@ -47,7 +48,7 @@ const theProblemSectionItems: TheProblemSectionItems[] = [
 const TheProblemSection = () => {
     return (
         <Section>
-            <div className={`w-full max-w-[450px] tablet:max-w-[800px] laptop:max-w-[1046px] flex flex-col gap-y-[32px] tablet:gap-y-[52px] laptop:gap-y-[72px]`}>
+            <div className={`w-full max-w-[450px] tablet:max-w-[900px] laptop:max-w-[1046px] flex flex-col gap-y-[32px] tablet:gap-y-[52px] laptop:gap-y-[72px]`}>
                 <div className={`w-full max-w-[450px] tablet:max-w-[650px] laptop:max-w-[754px] flex flex-col text-center tablet:text-start items-center tablet:items-start gap-y-[14px]`}>
                     <div className="relative laptop:w-[215px] tablet:w-[200px] w-[205px] aspect-[215/31]">
                         <Image
@@ -61,7 +62,9 @@ const TheProblemSection = () => {
                     <SectionHeading>You've tried to learn code before. It didn't stick.</SectionHeading>
                 </div>
 
-                <div className={`w-full h-[236px] bg-red-500`}></div>
+                <div className={`w-full h-full`}>
+                    <ResponsiveProblemElement/>
+                </div>
 
                 <div className={`w-full flex flex-col gap-y-[24px]`}>
                     {

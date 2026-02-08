@@ -45,7 +45,9 @@ const Navbar = () => {
                     h-[55px] tablet:h-[60px]
                     w-full max-w-[450px] tablet:max-w-[787px]
                     rounded-full
-                    border border-[#808080]
+                    border border-[#808080]/30
+                    shadow-[inset_0px_8.61px_25.46px_0px_rgba(255,255,255,0.08)]
+                    backdrop-blur-[9px]
                     bg-[linear-gradient(90deg,#1B1B1B_0%,#1D1D1D_45%,#212121_100%)]
                 "
             >

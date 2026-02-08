@@ -42,15 +42,16 @@ const NavbarButton = ({ open, setOpen }: {
                                 }}
                                 className="
                                 absolute top-[62px] right-0
-                                min-w-[200px]
-                                p-4
-                                border border-[#808080]
+                                w-[210px] p-4
+                                border border-[#808080]/30
+                                shadow-[inset_0px_8.61px_25.46px_0px_rgba(255,255,255,0.08)]
+                                backdrop-blur-[9px]
                                 bg-[linear-gradient(90deg,#1B1B1B_0%,#1D1D1D_45%,#212121_100%)]
                                 rounded-[20px]
-                                flex flex-col gap-3
+                                flex flex-col items-start gap-3
                                 font-inter font-medium
                                 text-[#8A8A8A]
-                                shadow-[0_20px_40px_rgba(0,0,0,0.15)]
+
                                 ">
                                 {
                                     navbarItems.map((item, index) => (

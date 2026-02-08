@@ -1,0 +1,19 @@
+"use client"
+
+import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas"
+
+const BentoFiveLaptop = () => {
+    const { RiveComponent } = useRive({
+        src: "/animations/bento/bentoFiveLaptop.riv",
+        stateMachines: "State Machine 1",
+        autoplay: true,
+        layout: new Layout({
+            fit: Fit.Cover,
+            alignment: Alignment.TopCenter,
+        }),
+    })
+
+    return <RiveComponent className="w-full h-full" />
+}
+
+export default BentoFiveLaptop

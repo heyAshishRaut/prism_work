@@ -1,4 +1,3 @@
-
 import HeroSection from "@/app/components/section/heroSection"
 import Navbar from "@/app/components/uiComponents/navbar"
 import TheProblemSection from "@/app/components/section/theProblemSection"
@@ -7,6 +6,9 @@ import WhatYouLearn from "@/app/components/section/whatYouLearn"
 import VisualLearningSection from "@/app/components/section/visualLearningSection"
 import UpskillTeam from "@/app/components/section/upskillTeam"
 import Footer from "@/app/components/section/footer"
+import PrismAvatars from "@/app/components/section/prismAvatars"
+import Pricing from "@/app/components/section/pricing"
+import ParticleEffect from "@/app/components/section/particleEffect"
 
 export default function Home() {
 
@@ -19,6 +21,8 @@ export default function Home() {
                 <HowItWorksSection/>
                 <WhatYouLearn/>
                 <VisualLearningSection/>
+                <PrismAvatars/>
+                <Pricing/>
                 <UpskillTeam/>
                 <Footer/>
             </div>

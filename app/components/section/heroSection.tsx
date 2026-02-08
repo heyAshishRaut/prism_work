@@ -1,7 +1,7 @@
 "use client"
 import RiveBackground from "@/app/components/animations/heroSectionBg.animations"
-import Image from "next/image"
-import HeroElement from "@/public/images/heroElement.webp"
+import noise from "@/public/images/noise.webp"
+import RiveCard from "@/app/components/animations/heroElement.animations"
 
 const HeroSection = () => {
     return (
@@ -13,29 +13,20 @@ const HeroSection = () => {
         ">
             <RiveBackground/>
 
-            <div className="absolute inset-0 backdrop-blur-3xl z-[1]"/>
+            <div style={{ backgroundImage: `url(${noise.src})` }} className="bg-contain absolute inset-0 backdrop-blur-3xl  z-[1]"/>
 
-            <div className="px-[20px] tablet:px-[40px] relative z-10 w-full h-full flex flex-col gap-y-[50px] tablet:gap-y-[70px] laptop:gap-y-[90px] items-center justify-center">
-                <div className="relative w-full max-w-[280px] tablet:max-w-[325px] laptop:max-w-[380px] aspect-[325/203]">
-                    <Image
-                        src={HeroElement}
-                        alt="Hero element"
-                        fill
-                        sizes="(max-width: 640px) 90vw,
-                        (max-width: 1200px) 325px,
-                        380px"
-                        className="object-contain"
-                        priority
-                    />
+            <div className="px-[20px] tablet:px-[40px] relative z-10 w-full h-full flex flex-col gap-y-[40px] tablet:gap-y-[60px] laptop:gap-y-[80px] items-center justify-center">
+                <div className="z-10 relative w-full flex items-center justify-center max-w-[280px] tablet:max-w-[325px] laptop:max-w-[380px] aspect-[325/203]">
+                    <RiveCard/>
                 </div>
 
                 <div className={`w-full max-w-[450px] tablet:max-w-[650px] laptop:max-w-[783px] flex flex-col items-center gap-y-[24px] tablet:gap-y-[32px]`}>
-                    <div className={`w-full flex flex-col items-center gap-y-[12px] text-center`}>
+                    <div className={`z-10 w-full flex flex-col items-center gap-y-[12px] text-center`}>
                         <div className={`w-full text-white font-archivo text-[32px] tablet:text-[44px] laptop:text-[64px] leading-[110%] tracking-[-2%]`}>See how code works. Understand it. Build with it.</div>
                         <div className={`w-full text-[#969696] tablet:max-w-[631px] font-work-sans text-[15px] tablet:text-[16px] leading-[150%] tracking-[-4%]`}>Prism teaches programming through animated visual explanations that make concepts click — then AI-powered labs help you practice.</div>
                     </div>
 
-                    <div className={`cursor-pointer pl-[16px] py-[4px] pr-[4px] flex items-center gap-x-[10px] rounded-full bg-white hover:bg-white/85 transition-all ease-in duration-75 text-black font-work-sans font-medium text-[14px] tablet:text-[15px] laptop:text-[16px] leading-[125%] tracking-[-4%]`}>
+                    <div className={`z-10 cursor-pointer pl-[16px] py-[4px] pr-[4px] flex items-center gap-x-[10px] rounded-full bg-white hover:bg-white/85 transition-all ease-in duration-75 text-black font-work-sans font-medium text-[14px] tablet:text-[15px] laptop:text-[16px] leading-[125%] tracking-[-4%]`}>
                         <div>Start Learning Free</div>
                         <div>
                             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,5 +52,6 @@ const HeroSection = () => {
         </section>
     )
 }
+
 
 export default HeroSection

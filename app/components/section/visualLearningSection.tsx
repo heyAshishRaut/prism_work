@@ -4,6 +4,8 @@ import PrismLogo from "@/public/images/prismIcon.png"
 import visualLearningIcon from "@/public/images/visualLearning.webp"
 import SectionHeading from "@/app/components/ui/sectionHeading"
 import Text16px from "@/app/components/ui/text16px"
+import VisualLearningRive from "@/app/components/uiComponents/visualLearningAnimatedElement"
+import ResponsiveVisualElement from "@/app/components/uiComponents/visualLearningAnimatedElement"
 
 interface VisualLearningSectionItems {
     icon: any
@@ -41,7 +43,7 @@ const visualLearningSectionItems: VisualLearningSectionItems[] = [
 const VisualLearningSection = () => {
     return (
         <Section>
-            <div className={`w-full max-w-[450px] tablet:max-w-[800px] laptop:max-w-[1211px] flex flex-col gap-y-[32px] tablet:gap-y-[52px] laptop:gap-y-[72px]`}>
+            <div className={`w-full max-w-[450px] tablet:max-w-[900px] laptop:max-w-[1211px] flex flex-col gap-y-[32px] tablet:gap-y-[52px] laptop:gap-y-[72px]`}>
                 <div className={`w-full max-w-[450px] tablet:max-w-[550px] laptop:max-w-[650px] flex flex-col text-center tablet:text-start items-center tablet:items-start gap-y-[14px]`}>
                     <div className="relative laptop:w-[315px] tablet:w-[290px] w-[270px] aspect-[315/31]">
                         <Image
@@ -55,7 +57,9 @@ const VisualLearningSection = () => {
                     <SectionHeading>You remember movies. Now you'll remember code.</SectionHeading>
                 </div>
 
-                <div className={`w-full h-[366px] bg-red-500`}></div>
+                <div className={``}>
+                    <ResponsiveVisualElement/>
+                </div>
 
                 <div className={`w-full flex flex-col gap-y-[24px]`}>
                     {

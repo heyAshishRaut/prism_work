@@ -1,6 +1,10 @@
 import Logo from "@/public/images/prismLogoNavbar.webp"
 import Image from "next/image"
 import Text16px from "@/app/components/ui/text16px"
+import mask from "@/public/images/footermask.png"
+import bg from "@/public/images/footerbg.png"
+import icon from "@/public/images/prismIconFooter.png"
+import ParticlesBackground from "@/app/components/ui/paticleBg"
 
 const footerItems = [
     {
@@ -42,9 +46,60 @@ const footerItems = [
 const Footer = () => {
     return (
         <div className={`w-full flex flex-col items-center`}>
-            <div className={`w-full`}>
+            <div className={`relative w-full overflow-hidden`}>
+                <div style={{ backgroundImage: `url(${mask.src})` }} className={`z-0 absolute bg-cover bottom-0 w-full h-[364px]`}/>
+                <div
+                    style={{ backgroundImage: `url(${bg.src})` }}
+                    className="absolute bottom-[-50px] left-1/2 -translate-x-1/2 w-[110vw] h-[364px] bg-cover bg-center [mask-image:linear-gradient(to_bottom,transparent_0%,black_30px,black_100%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_30px,black_100%)]"
+                />
 
+                <ParticlesBackground/>
+
+                <div className={`h-full w-full pt-[100px] tablet:pt-[130px] laptop:pt-[152px]`}>
+                    <div className={`px-[20px] tablet:px-[40px] h-full w-full flex flex-col items-center justify-end  gap-y-[64px]`}>
+                        <div className={`w-full max-w-[450px] tablet:max-w-[650px] laptop:max-w-[800px] flex flex-col items-center gap-y-[24px]`}>
+                            <div className={`w-full flex flex-col items-center gap-y-[4px] text-center`}>
+                                <div className={`w-full text-white font-archivo text-[32px] tablet:text-[42px] laptop:text-[52px] leading-[110%] tracking-[-2%]`}>Ready to see code differently?</div>
+                                <div className={`w-full text-[#969696] tablet:max-w-[631px] font-work-sans text-[15px] tablet:text-[16px] leading-[150%] tracking-[-4%]`}>Prism teaches programming through animated visual explanations</div>
+                            </div>
+
+                            <div className={`cursor-pointer pl-[16px] py-[4px] pr-[4px] flex items-center gap-x-[10px] rounded-full bg-white hover:bg-white/85 transition-all ease-in duration-75 text-black font-work-sans font-medium text-[14px] tablet:text-[15px] laptop:text-[16px] leading-[125%] tracking-[-4%]`}>
+                                <div>Start Learning Free</div>
+                                <div>
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.5" y="0.5" width="35" height="35" rx="17.5" fill="black"/>
+                                        <rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="url(#paint0_linear_979_11768)"/>
+                                        <path d="M15.3333 25.3332H14.6667V24.6665H14V23.9998H13.3333V23.3332H14V22.6665H14.6667V21.9998H15.3333V21.3332H16V20.6665H16.6667V19.9998H17.3333V19.3332H18V18.6665H18.6667V17.3332H18V16.6665H17.3333V15.9998H16.6667V15.3332H16V14.6665H15.3333V13.9998H14.6667V13.3332H14V12.6665H13.3333V11.9998H14V11.3332H14.6667V10.6665H15.3333V11.3332H16V11.9998H16.6667V12.6665H17.3333V13.3332H18V13.9998H18.6667V14.6665H19.3333V15.3332H20V15.9998H20.6667V16.6665H21.3333V17.3332H22V18.6665H21.3333V19.3332H20.6667V19.9998H20V20.6665H19.3333V21.3332H18.6667V21.9998H18V22.6665H17.3333V23.3332H16.6667V23.9998H16V24.6665H15.3333V25.3332Z" fill="white"/>
+                                        <defs>
+                                            <linearGradient id="paint0_linear_979_11768" x1="-6.40323e-08" y1="10.08" x2="37.9269" y2="13.0108" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#6633FF"/>
+                                                <stop offset="0.206731" stop-color="#FF1919"/>
+                                                <stop offset="0.413462" stop-color="#FF8800"/>
+                                                <stop offset="0.615385" stop-color="#FFEA00"/>
+                                                <stop offset="0.793269" stop-color="#19FF94"/>
+                                                <stop offset="1" stop-color="#00D5FF"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="relative z-30 w-[260px] h-[210px] tablet:w-[360px] tablet:h-[290px] laptop:w-[483px] laptop:h-[390px]">
+                            <Image
+                                src={icon}
+                                alt=""
+                                width={483}
+                                height={390}
+                                className="absolute -bottom-4 w-full h-auto"
+                            />
+                        </div>
+
+                    </div>
+                </div>
             </div>
+
             <div className={`px-[40px] w-full py-[40px] tablet:py-[50px] laptop:py-[60px] max-w-[450px] tablet:max-w-[900px] laptop:max-w-[1192px]`}>
                 <div className={`w-full flex flex-col tablet:flex-row items-center gap-y-[40px] tablet:justify-between`}>
                     <div className={`w-full max-w-[350px] flex flex-col`}>
@@ -81,7 +136,9 @@ const Footer = () => {
                                 </div>
                             </div>
 
-                            <Text16px>Copyright © 2025 Prism. All Rights Reserved</Text16px>
+                            <div className={`text-center tablet:text-start`}>
+                                <Text16px>Copyright © 2025 Prism. All Rights Reserved</Text16px>
+                            </div>
                         </div>
                     </div>
 
