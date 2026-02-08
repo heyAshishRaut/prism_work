@@ -95,12 +95,11 @@ const Footer = () => {
                                 className="absolute -bottom-4 w-full h-auto"
                             />
                         </div>
-
                     </div>
                 </div>
             </div>
 
-            <div className={`px-[40px] w-full py-[40px] tablet:py-[50px] laptop:py-[60px] max-w-[450px] tablet:max-w-[900px] laptop:max-w-[1192px]`}>
+            <div className={`px-[20px] tablet:px-[40px] w-full py-[40px] tablet:py-[50px] laptop:py-[60px] max-w-[450px] tablet:max-w-[900px] laptop:max-w-[1192px]`}>
                 <div className={`w-full flex flex-col tablet:flex-row items-center gap-y-[40px] tablet:justify-between`}>
                     <div className={`w-full max-w-[350px] flex flex-col`}>
                         <div className={`flex flex-col items-center tablet:items-start gap-y-[40px]`}>
@@ -108,7 +107,7 @@ const Footer = () => {
                                 src={Logo}
                                 alt="Prism logo"
                                 priority
-                                className="w-[100px] tablet:w-[150px] laptop:w-[192px] h-auto"/>
+                                className="w-[150px] laptop:w-[192px] h-auto"/>
 
                             <div className={`flex gap-x-[15px] tablet:gap-x-[20px]`}>
                                 <div className={`cursor-pointer hover:bg-white/10 h-[45px] tablet:h-[50px] w-[45px] tablet:w-[50px] flex items-center justify-center rounded-[11px] bg-white/7 border border-white/10`}>
@@ -137,7 +136,7 @@ const Footer = () => {
                             </div>
 
                             <div className={`text-center tablet:text-start`}>
-                                <Text16px>Copyright © 2025 Prism. All Rights Reserved</Text16px>
+                                <div className={`text-[#969696] font-work-sans text-[14px] laptop:text-[16px] leading-[150%] tracking-[-4%]`}>Copyright © 2025 Prism. All Rights Reserved</div>
                             </div>
                         </div>
                     </div>
@@ -146,8 +145,8 @@ const Footer = () => {
                         <div className={`w-full flex justify-between`}>
                             {
                                 footerItems.map((e, index) => (
-                                    <div key={index} className={`text-[15px] tablet:text-[16px] flex flex-col items-center tablet:items-start gap-y-[20px]`}>
-                                        <div className={`font-work-sans  font-medium leading-[135%] tracking-[-2%] text-white`}>{e.title}</div>
+                                    <div key={index} className={`text-[15px] tablet:text-[16px] flex flex-col items-start gap-y-[20px]`}>
+                                        <div className={`font-work-sans font-medium leading-[135%] tracking-[-2%] text-white`}>{e.title}</div>
                                         {
                                             e.list.map((li, i) => (
                                                 <a href="#" key={i} className={`cursor-pointer text-[#969696] hover:text-white/80 font-work-sans leading-[135%] tracking-[-2%]`}>{li.name}</a>

@@ -3,7 +3,7 @@ import mask02 from "@/public/images/maskBento02V2.png"
 import mask05 from "@/public/images/maskBento05.png"
 import Text16px from "@/app/components/ui/text16px"
 import {BentoFour, BentoOne, BentoThree, BentoTwo} from "@/app/components/animations/bentoOne.animations"
-import ResponsiveBentoFive from "@/app/components/uiComponents/responsiveBentoFive";
+import ResponsiveBentoFive from "@/app/components/uiComponents/responsiveBentoFive"
 
 const BentoGrid = () => {
     return (

@@ -2,7 +2,7 @@ import Section from "@/app/components/ui/section"
 import Image from "next/image"
 import whatYouLearn from "@/public/images/whatYouLearnLearn.webp"
 import SectionHeading from "@/app/components/ui/sectionHeading"
-import BentoGrid from "@/app/components/uiComponents/bentoGrid"
+import BentoGrid from "@/app/components/uiComponents/bentoGridV2"
 
 const HowItWorksSection = () => {
     return (

@@ -42,8 +42,8 @@ const Navbar = () => {
             <div className="
                     flex items-center justify-between
                     pl-[24px] pr-[6px] py-[6px]
-                    h-[55px] tablet:h-[60px]
-                    w-full max-w-[450px] tablet:max-w-[787px]
+                    h-[60px]
+                    w-full max-w-full tablet:max-w-[787px]
                     rounded-full
                     border border-[#808080]/30
                     shadow-[inset_0px_8.61px_25.46px_0px_rgba(255,255,255,0.08)]
@@ -51,17 +51,7 @@ const Navbar = () => {
                     bg-[linear-gradient(90deg,#1B1B1B_0%,#1D1D1D_45%,#212121_100%)]
                 "
             >
-                <Image
-                    src={Logo}
-                    alt="Prism logo"
-                    priority
-                    className="
-                        w-[90px]
-                        tablet:w-[110px]
-                        laptop:w-[120px]
-                        h-auto
-                    "
-                />
+                <Image src={Logo} alt="Prism logo" priority className="w-[120px] h-auto"/>
 
                 <div className={`hidden tablet:flex items-center tablet:gap-x-[20px] laptop:gap-x-[30px] font-inter font-medium tablet:text-[15px] laptop:text-[16px] text-[#8A8A8A] leading-[150%] tracking-[0%]`}>
                     {

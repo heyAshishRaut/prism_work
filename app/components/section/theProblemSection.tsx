@@ -58,7 +58,6 @@ const TheProblemSection = () => {
                             className="object-contain"
                         />
                     </div>
-
                     <SectionHeading>You've tried to learn code before. It didn't stick.</SectionHeading>
                 </div>
 
@@ -66,10 +65,10 @@ const TheProblemSection = () => {
                     <ResponsiveProblemElement/>
                 </div>
 
-                <div className={`w-full flex flex-col gap-y-[24px]`}>
+                <div className={`w-full flex flex-col gap-y-[18px] tablet:gap-y-[24px]`}>
                     {
                         theProblemSectionItems.map((e, index) => (
-                            <div key={index} className={`flex flex-col tablet:flex-row items-center text-center tablet:text-start gap-[10px]`}>
+                            <div key={index} className={`flex flex-row items-center text-start gap-[10px]`}>
                                 <div className={`h-[22px] w-[22px] flex items-center justify-center`}>{e.icon}</div>
                                 <Text16px>{e.desc}</Text16px>
                             </div>

@@ -51,7 +51,7 @@ const Pricing = () => {
                                 <div className={`w-full flex flex-col gap-y-[20px]`}>
                                     <div className={`w-full flex flex-col gap-y-[24px]`}>
                                         <div className={`flex gap-x-[8px] items-center`}>
-                                            <div className={`h-[20px] laptop:h-[24px] w-[20px] laptop:w-[24px] rounded-[5px] border border-[#FF941A] bg-[#FF8800]`}></div>
+                                            <div className={`shadow-[-2px_-2px_20px_rgba(255,148,26,0.25),4px_4px_20px_rgba(0,0,0,1)] h-[20px] laptop:h-[24px] w-[20px] laptop:w-[24px] rounded-[5px] border border-[#FF941A] bg-[#FF8800]`}></div>
                                             <div className={`text-white font-archivo text-[16px] laptop:text-[20px] leading-[125%] tracking-[-2%]`}>Free
                                             </div>
                                         </div>
@@ -113,7 +113,7 @@ const Pricing = () => {
                                     <div className={`w-full flex flex-col gap-y-[20px]`}>
                                         <div className={`w-full flex flex-col gap-y-[24px]`}>
                                             <div className={`flex gap-x-[8px]`}>
-                                                <div style={{ backgroundImage: `url(${pro.src})` }} className={`h-[20px] laptop:h-[24px] w-[20px] laptop:w-[24px] bg-contain rounded-[5px]`}>
+                                                <div style={{ backgroundImage: `url(${pro.src})` }} className={`shadow-[-2px_-2px_20px_rgba(255,255,255,0.25),4px_4px_20px_rgba(0,0,0,1)] h-[20px] laptop:h-[24px] w-[20px] laptop:w-[24px] bg-contain rounded-[5px]`}>
                                                 </div>
                                                 <div className={`text-white font-archivo text-[16px] laptop:text-[20px] leading-[125%] tracking-[-2%]`}>Pro
                                                 </div>
@@ -167,7 +167,7 @@ const Pricing = () => {
                                 <div className={`w-full flex flex-col gap-y-[20px]`}>
                                     <div className={`w-full flex flex-col gap-y-[24px]`}>
                                         <div className={`flex gap-x-[8px]`}>
-                                            <div className={`h-[20px] laptop:h-[24px] w-[20px] laptop:w-[24px] rounded-[5px] border border-[#6E3DFF] bg-[#6633FF]`}></div>
+                                            <div className={`shadow-[-2px_-2px_20px_rgba(110, 61, 255, 0.25),4px_4px_20px_rgba(0,0,0,1)] h-[20px] laptop:h-[24px] w-[20px] laptop:w-[24px] rounded-[5px] border border-[#6E3DFF] bg-[#6633FF]`}></div>
                                             <div className={`text-white font-archivo text-[16px] laptop:text-[20px] leading-[125%] tracking-[-2%]`}>Teams
                                             </div>
                                         </div>

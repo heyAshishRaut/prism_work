@@ -4,7 +4,6 @@ import PrismLogo from "@/public/images/prismIcon.png"
 import visualLearningIcon from "@/public/images/visualLearning.webp"
 import SectionHeading from "@/app/components/ui/sectionHeading"
 import Text16px from "@/app/components/ui/text16px"
-import VisualLearningRive from "@/app/components/uiComponents/visualLearningAnimatedElement"
 import ResponsiveVisualElement from "@/app/components/uiComponents/visualLearningAnimatedElement"
 
 interface VisualLearningSectionItems {
@@ -61,16 +60,16 @@ const VisualLearningSection = () => {
                     <ResponsiveVisualElement/>
                 </div>
 
-                <div className={`w-full flex flex-col gap-y-[24px]`}>
+                <div className={`w-full flex flex-col gap-y-[18px] tablet:gap-y-[24px]`}>
                     {
                         visualLearningSectionItems.map((e, index) => (
-                            <div key={index} className={`flex flex-col tablet:flex-row items-center text-center tablet:text-start gap-[10px]`}>
+                            <div key={index} className={`flex flex-row items-center text-start gap-[10px]`}>
                                 <div className={`h-[22px] w-[22px] flex items-center justify-center`}>{e.icon}</div>
                                 <Text16px>{e.desc}</Text16px>
                             </div>
                         ))
                     }
-                    <div className={`flex items-center justify-center tablet:justify-start gap-x-[10px]`}>
+                    <div className={`flex items-center justify-start gap-x-[10px]`}>
                         <Image src={PrismLogo} alt={""} height={27} width={22} />
                         <div className={`font-work-sans font-medium text-[14px] tablet:text-[15px] laptop:text-[17px] text-white leading-[150%] tracking-[-2%]`}>That's why Prism exists.</div>
                     </div>

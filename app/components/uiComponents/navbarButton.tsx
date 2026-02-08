@@ -42,13 +42,13 @@ const NavbarButton = ({ open, setOpen }: {
                                 }}
                                 className="
                                 absolute top-[62px] right-0
-                                w-[210px] p-4
+                                w-[250px] p-4
                                 border border-[#808080]/30
                                 shadow-[inset_0px_8.61px_25.46px_0px_rgba(255,255,255,0.08)]
                                 backdrop-blur-[9px]
                                 bg-[linear-gradient(90deg,#1B1B1B_0%,#1D1D1D_45%,#212121_100%)]
                                 rounded-[20px]
-                                flex flex-col items-start gap-3
+                                flex flex-col items-center gap-5
                                 font-inter font-medium
                                 text-[#8A8A8A]
 
@@ -57,14 +57,14 @@ const NavbarButton = ({ open, setOpen }: {
                                     navbarItems.map((item, index) => (
                                     <div
                                         key={index}
-                                        className="text-[15px] leading-[150%] tracking-[0%] cursor-pointer hover:text-white transition-colors duration-150"
+                                        className="text-[17px] leading-[150%] tracking-[0%] cursor-pointer hover:text-white transition-colors duration-150"
                                     >
                                         {item.name}
                                     </div>
                                 ))}
 
                                 <div
-                                    className={`mt-4 flex cursor-pointer h-full w-full py-[12px] items-center justify-center rounded-full bg-white hover:bg-white/85 transition-all ease-in duration-75 text-black font-work-sans font-medium text-[14px] leading-[125%] tracking-[-4%]`}>Start
+                                    className={`flex cursor-pointer h-full w-full py-[12px] items-center justify-center rounded-full bg-white hover:bg-white/85 transition-all ease-in duration-75 text-black font-work-sans font-medium text-[15px] leading-[125%] tracking-[-4%]`}>Start
                                     Learning Free
                                 </div>
                             </motion.div>
