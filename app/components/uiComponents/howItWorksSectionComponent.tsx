@@ -19,11 +19,12 @@ const ShimmerText = ({text, active,}: { text: string; active: boolean }) => {
                     <motion.span className="absolute inset-0 text-white pointer-events-none"
                                  style={{
                                      WebkitMaskImage:
-                                         "linear-gradient(110deg, transparent 30%, white 50%, transparent 70%)",
-                                     WebkitMaskSize: "250% 100%",
+                                         "linear-gradient(110deg, transparent 35%, white 50%, transparent 65%)",
+                                     WebkitMaskSize: "300% 100%",
                                      maskImage:
-                                         "linear-gradient(110deg, transparent 30%, white 50%, transparent 70%)",
-                                     maskSize: "250% 100%",
+                                         "linear-gradient(110deg, transparent 35%, white 50%, transparent 65%)",
+                                     maskSize: "300% 100%",
+                                     filter: "drop-shadow(0 0 6px rgba(255,255,255,0.65))",
                                  }}
                                  initial={{
                                      opacity: 0,
@@ -86,8 +87,7 @@ const HowItWorksSectionComponent = () => {
     }, [activeIndex])
 
     return (
-        <div
-            className="thin-scrollbar scroll-smooth relative w-full h-[50px] tablet:h-[61px] flex items-center overflow-x-auto tablet:overflow-hidden flex-nowrap [-webkit-overflow-scrolling:touch]">
+        <div className="thin-scrollbar scroll-smooth relative w-full h-[50px] tablet:h-[61px] flex items-center overflow-x-auto tablet:overflow-hidden flex-nowrap [-webkit-overflow-scrolling:touch]">
 
             {/* CARD 1 */}
             <div

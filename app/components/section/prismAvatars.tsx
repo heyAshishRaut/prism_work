@@ -217,19 +217,17 @@ const Avatar = ({avatar, showTooltip}: { avatar: StaticImageData; showTooltip?: 
 
 const PrismAvatars = () => {
     return (
-        <div
-            className={`relative tablet:h-[550px] laptop:h-[855px] px-[20px] tablet:px-[40px] py-[60px] tablet:py-[80px] laptop:py-[100px] w-full flex items-center justify-center`}>
+        <div className={`tablet:h-[550px] laptop:h-[855px] px-[20px] tablet:px-[40px] py-[60px] tablet:py-[80px] laptop:py-[100px] w-full flex items-center justify-center`}>
             <TooltipProvider delayDuration={100}>
-                <div className={`flex items-center justify-center w-full max-w-[450px] tablet:max-w-[800px] laptop:max-w-[1040px]`}>
-                    <div
-                        className={`z-2 absolute h-[150px] tablet:h-[300px] w-full bottom-[60px] tablet:bottom-[80px] laptop:bottom-[100px]`}>
+                <div className={`relative flex items-center justify-center w-full max-w-[450px] tablet:max-w-[800px] laptop:max-w-[1040px]`}>
+                    <div className={`z-2 overflow-hidden absolute h-[150px] tablet:h-[250px] w-full bottom-0`}>
                         <ParticlesBackground/>
                     </div>
-                    <div className={`z-10 relative flex flex-col items-center gap-[12px] laptop:gap-[20px]`}>
+                    <div className={`relative flex flex-col items-center gap-[12px] laptop:gap-[20px]`}>
                         {
                             avatarsItems.map((row, rowIndex) => (
                                 <div key={rowIndex}
-                                     className="w-full flex justify-center flex-wrap tablet:flex-nowrap gap-[12px] laptop:gap-[20px]">
+                                     className="z-10 w-full flex justify-center flex-wrap tablet:flex-nowrap gap-[12px] laptop:gap-[20px]">
                                     {
                                         row.avatars.map((el, i) => {
                                             return (
@@ -245,12 +243,12 @@ const PrismAvatars = () => {
                             ))
                         }
 
-                        <div className="z-5 w-full flex justify-between flex-wrap gap-[12px] laptop:gap-[20px]">
+                        <div className="z-10 w-full flex justify-between flex-wrap gap-[12px] laptop:gap-[20px]">
                             <Avatar avatar={avatar1} showTooltip/>
                             <Avatar avatar={avatar2}/>
                         </div>
 
-                        <div className="z-5 w-full flex justify-between flex-wrap gap-[12px] laptop:gap-[20px]">
+                        <div className="z-10 w-full flex justify-between flex-wrap gap-[12px] laptop:gap-[20px]">
                             <Avatar avatar={avatar1} showTooltip/>
                             <Avatar avatar={avatar1} showTooltip/>
                         </div>

@@ -54,7 +54,9 @@ const Footer = () => {
                     className="absolute bottom-[-50px] left-1/2 -translate-x-1/2 w-[110vw] h-[364px] bg-cover bg-center [mask-image:linear-gradient(to_bottom,transparent_0%,black_30px,black_100%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_30px,black_100%)]"
                 />
 
-                <ParticlesBackground/>
+                <div className={`z-2 overflow-hidden absolute h-[250px] w-full bottom-0`}>
+                    <ParticlesBackground/>
+                </div>
 
                 <div className={`relative z-20 h-full w-full pt-[100px] tablet:pt-[130px] laptop:pt-[152px]`}>
                     <div className={`px-[20px] tablet:px-[40px] h-full w-full flex flex-col items-center justify-end  gap-y-[64px]`}>

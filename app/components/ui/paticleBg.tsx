@@ -15,7 +15,7 @@ const ParticlesBackground = ({ className = "" }: ParticlesBackgroundProps) => {
         window.particlesJS(containerId, {
             particles: {
                 number: {
-                    value: 300,
+                    value: 600,
                     density: { enable: true, value_area: 800 },
                 },
                 color: { value: "#ffffff" },
@@ -23,7 +23,8 @@ const ParticlesBackground = ({ className = "" }: ParticlesBackgroundProps) => {
                 size: { value: 1, random: true },
                 move: {
                     enable: true,
-                    speed: 2,
+                    direction: "top",
+                    speed: 1,
                     out_mode: "out",
                 },
                 line_linked: { enable: false },
@@ -49,7 +50,7 @@ const ParticlesBackground = ({ className = "" }: ParticlesBackgroundProps) => {
             />
             <div
                 id={containerId}
-                className={`absolute bottom-0 z-20 w-full h-[200px] tablet:h-[300px] pointer-events-none ${className}`}
+                className={`absolute bottom-0 z-20 w-full pointer-events-none ${className}`}
             />
         </>
     )

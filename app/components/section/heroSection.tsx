@@ -15,7 +15,7 @@ const HeroSection = () => {
 
             <div style={{ backgroundImage: `url(${noise.src})` }} className="z-5 bg-cover absolute inset-0 backdrop-blur-3xl"/>
 
-            <div className="px-[20px] tablet:px-[40px] relative z-10 w-full h-full flex flex-col gap-y-[40px] tablet:gap-y-[60px] laptop:gap-y-[80px] items-center justify-center">
+            <div className="px-[20px] tablet:px-[40px] relative z-10 w-full h-full flex flex-col gap-y-[24px] items-center justify-center">
                 <div className="z-10 relative w-full flex items-center justify-center max-w-[280px] tablet:max-w-[325px] laptop:max-w-[380px] aspect-[325/203]">
                     <RiveCard/>
                 </div>
