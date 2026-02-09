@@ -6,7 +6,7 @@ import Image from "next/image"
 import {useEffect, useRef, useState} from "react"
 import {motion} from "framer-motion"
 import {LoaderOverlay} from "@/app/components/ui/loaderOverlay"
-import SvgForHowItWorksSection from "@/app/components/ui/svgForHowItWorksSection";
+import SvgForHowItWorksSection from "@/app/components/ui/svgForHowItWorksSection"
 
 const TOTAL_STEPS = 5
 
@@ -52,7 +52,6 @@ const ShimmerText = ({text, active,}: { text: string; active: boolean }) => {
     )
 }
 
-
 const HowItWorksSectionComponent = () => {
     const [activeIndex, setActiveIndex] = useState(0)
 
@@ -70,12 +69,11 @@ const HowItWorksSectionComponent = () => {
         return () => clearTimeout(timeout)
     }, [activeIndex, delay])
 
-
     return (
-        <div className="thin-scrollbar scroll-smooth relative w-full h-[40px] tablet:h-[50px] laptop:h-[61px] flex items-center overflow-x-auto tablet:overflow-hidden flex-nowrap [-webkit-overflow-scrolling:touch]">
+        <div className="thin-scrollbar scroll-smooth relative w-full h-[45px] tablet:h-[50px] laptop:h-[61px] flex items-center overflow-x-auto tablet:overflow-hidden flex-nowrap [-webkit-overflow-scrolling:touch]">
 
             {/* CARD 1 */}
-            <div className="z-20 relative shrink-0 tablet:shrink h-full px-[30px] tablet:px-0 tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
+            <div onClick={() => setActiveIndex(0)} className="cursor-pointer z-20 relative shrink-0 tablet:shrink h-full px-[30px] tablet:px-0 tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 0}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
                     <Image src={seeIt} alt="" height={28} width={28}
@@ -100,13 +98,13 @@ const HowItWorksSectionComponent = () => {
 
             {/* CARD 2 */}
             <div
-                className="relative shrink-0 tablet:shrink h-full px-[30px] tablet:px-0 tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
+                onClick={() => setActiveIndex(1)}
+                className="cursor-pointer relative shrink-0 tablet:shrink h-full px-[30px] tablet:px-0 tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 2}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
                     <Image src={understandItActive} alt="" height={28} width={28}
                            className={`${activeIndex === 2 ? "grayscale-0" : "grayscale"} w-[18px] h-[18px] tablet:w-[20px] tablet:h-[20px] laptop:w-[28px] laptop:h-[28px]`}/>
-                    <div
-                        className="
+                    <div className="
                         font-archivo font-medium
                         text-[15px] tablet:text-[18px] laptop:text-[24px]
                         leading-[120%] tracking-[-2%]
@@ -125,7 +123,8 @@ const HowItWorksSectionComponent = () => {
 
             {/* CARD 3 */}
             <div
-                className="relative shrink-0 tablet:shrink h-full px-[30px] tablet:px-0 tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
+                onClick={() => setActiveIndex(3)}
+                className="cursor-pointer relative shrink-0 tablet:shrink h-full px-[30px] tablet:px-0 tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 4}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
                     <Image src={buildItActive} alt="" height={28} width={28}

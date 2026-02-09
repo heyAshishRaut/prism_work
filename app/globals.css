@@ -77,8 +77,8 @@ canvas.particles-js-canvas-el {
     }
 
     .thin-scrollbar::-webkit-scrollbar {
-        width: 4px;
-        height: 4px;
+        width: 2px;
+        height: 2px;
     }
 
     .thin-scrollbar::-webkit-scrollbar-track {

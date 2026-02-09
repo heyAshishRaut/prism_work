@@ -8,7 +8,7 @@ const BentoFiveMobile = () => {
         stateMachines: "State Machine 1",
         autoplay: true,
         layout: new Layout({
-            fit: Fit.Contain,
+            fit: Fit.FitHeight,
             alignment: Alignment.TopCenter,
         }),
     })
