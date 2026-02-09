@@ -3,7 +3,7 @@ import seeIt from "@/public/images/seeIt.webp"
 import understandItActive from "@/public/images/understandItActive.png"
 import buildItActive from "@/public/images/buildItActive.png"
 import Image from "next/image"
-import {useEffect, useState} from "react"
+import {useEffect, useRef, useState} from "react"
 import {motion} from "framer-motion"
 import {LoaderOverlay} from "@/app/components/ui/loaderOverlay"
 import SvgForHowItWorksSection from "@/app/components/ui/svgForHowItWorksSection";
@@ -58,6 +58,12 @@ const HowItWorksSectionComponent = () => {
     const delayMap = [3000, 2000, 3000, 2000, 3000]
     const delay = delayMap[activeIndex]
 
+    const containerRef = useRef<HTMLDivElement>(null)
+    const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+
+    const isMobile =
+        typeof window !== "undefined" && window.innerWidth < 810
+
     useEffect(() => {
         const timeout = setTimeout(() => {
             setActiveIndex((prev) => (prev + 1) % TOTAL_STEPS)
@@ -66,12 +72,28 @@ const HowItWorksSectionComponent = () => {
         return () => clearTimeout(timeout)
     }, [activeIndex, delay])
 
+    useEffect(() => {
+        if (!isMobile) return
+
+        const el = itemRefs.current[activeIndex]
+        if (!el) return
+
+        el.scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest",
+        })
+    }, [activeIndex])
+
     return (
         <div
-            className="thin-scrollbar relative w-full h-[50px] tablet:h-[61px] flex items-center overflow-x-auto tablet:overflow-hidden flex-nowrap [-webkit-overflow-scrolling:touch]">
+            className="thin-scrollbar scroll-smooth relative w-full h-[50px] tablet:h-[61px] flex items-center overflow-x-auto tablet:overflow-hidden flex-nowrap [-webkit-overflow-scrolling:touch]">
 
             {/* CARD 1 */}
             <div
+                ref={(el) => {
+                    itemRefs.current[0] = el
+                }}
                 className="z-20 relative shrink-0 tablet:shrink h-full w-[180px] tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 0}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
@@ -97,6 +119,9 @@ const HowItWorksSectionComponent = () => {
 
             {/* CARD 2 */}
             <div
+                ref={(el) => {
+                    itemRefs.current[1] = el
+                }}
                 className="relative shrink-0 tablet:shrink h-full w-[180px] tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 2}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
@@ -122,6 +147,9 @@ const HowItWorksSectionComponent = () => {
 
             {/* CARD 3 */}
             <div
+                ref={(el) => {
+                    itemRefs.current[2] = el
+                }}
                 className="relative shrink-0 tablet:shrink h-full w-[180px] tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 4}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
