@@ -73,27 +73,12 @@ const HowItWorksSectionComponent = () => {
         return () => clearTimeout(timeout)
     }, [activeIndex, delay])
 
-    useEffect(() => {
-        if (!isMobile) return
-
-        const el = itemRefs.current[activeIndex]
-        if (!el) return
-
-        el.scrollIntoView({
-            behavior: "smooth",
-            inline: "center",
-            block: "nearest",
-        })
-    }, [activeIndex])
 
     return (
         <div className="thin-scrollbar scroll-smooth relative w-full h-[50px] tablet:h-[61px] flex items-center overflow-x-auto tablet:overflow-hidden flex-nowrap [-webkit-overflow-scrolling:touch]">
 
             {/* CARD 1 */}
             <div
-                ref={(el) => {
-                    itemRefs.current[0] = el
-                }}
                 className="z-20 relative shrink-0 tablet:shrink h-full w-[180px] tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 0}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
@@ -119,9 +104,6 @@ const HowItWorksSectionComponent = () => {
 
             {/* CARD 2 */}
             <div
-                ref={(el) => {
-                    itemRefs.current[1] = el
-                }}
                 className="relative shrink-0 tablet:shrink h-full w-[180px] tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 2}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
@@ -147,9 +129,6 @@ const HowItWorksSectionComponent = () => {
 
             {/* CARD 3 */}
             <div
-                ref={(el) => {
-                    itemRefs.current[2] = el
-                }}
                 className="relative shrink-0 tablet:shrink h-full w-[180px] tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 4}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
