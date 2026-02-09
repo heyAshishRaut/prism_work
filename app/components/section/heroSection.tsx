@@ -10,11 +10,15 @@ const HeroSection = () => {
         h-[850px]
         laptop:h-[929px]
         overflow-hidden
+
         ">
-            <RiveBackground/>
+            <div className={`z-2 `}>
+                <RiveBackground/>
+            </div>
 
             {/*Commit */}
-            <div style={{ backgroundImage: `url(${noise.src})` }} className="z-5 absolute inset-0 backdrop-blur-3xl"/>
+            <div style={{ backgroundImage: `url(${noise.src})` }} className="bg-contain bg-white/7 z-5 h-full w-full absolute inset-0"/>
+            <div className={`z-3 absolute h-full w-full backdrop-blur-3xl`}/>
 
             <div className="px-[20px] tablet:px-[40px] relative z-10 w-full h-full flex flex-col gap-y-[24px] items-center justify-center">
                 <div className="z-10 relative w-full flex items-center justify-center max-w-[280px] tablet:max-w-[325px] laptop:max-w-[380px] aspect-[325/203]">
