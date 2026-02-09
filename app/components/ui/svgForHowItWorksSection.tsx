@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { useEffect, useState, useMemo } from "react"
+import { useEffect, useState } from "react"
 
 type Device = "mobile" | "tablet" | "laptop"
 
@@ -20,29 +20,32 @@ const SvgForHowItWorksSection = ({ active }: { active: boolean }) => {
         return () => window.removeEventListener("resize", update)
     }, [])
 
-    const dashedLines = Array.from({ length: 24 })
+    const containerWidth =
+        device === "laptop" ? 130 : 80
 
-    const containerWidth = 110
     const glowWidth = 15
-
     const startX = -glowWidth
-    const endX = containerWidth + glowWidth
+    const endX = containerWidth
 
     return (
-        <div className="relative shrink-0 w-[80px] laptop:w-[130px] h-[5px] flex items-center gap-x-[3px] overflow-hidden">
-            {dashedLines.map((_, index) => (
+        <div
+            className="relative shrink-0 h-[5px] flex gap-x-[3px] items-center overflow-hidden"
+            style={{ width: containerWidth }}
+        >
+            {Array.from({ length: 24 }).map((_, i) => (
                 <div
-                    key={index}
-                    className="w-[4px] bg-[#2e2e2e]"
-                    style={{ height: "1.5px" }}
+                    key={i}
+                    className="w-[4px] h-[1.5px] bg-[#2e2e2e]"
                 />
             ))}
 
             {active && (
                 <motion.div
-                    className="absolute h-[5px] w-[15px] rounded-full bg-[linear-gradient(to_left,white_0%,rgba(255,255,255,0.6)_40%,rgba(255,255,255,0)_100%)]"
-                    initial={{ x: startX, opacity: 1 }}
-                    animate={{ x: endX, opacity: 1 }}
+                    key={device}
+                    className="absolute h-[5px] w-[15px] rounded-full
+                    bg-[linear-gradient(to_left,white_0%,rgba(255,255,255,0.6)_40%,rgba(255,255,255,0)_100%)]"
+                    initial={{ x: startX }}
+                    animate={{ x: endX }}
                     transition={{
                         duration: 2,
                         ease: "linear",
