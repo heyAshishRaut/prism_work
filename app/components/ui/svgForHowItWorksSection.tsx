@@ -20,8 +20,8 @@ const SvgForHowItWorksSection = ({ active }: { active: boolean }) => {
         return () => window.removeEventListener("resize", update)
     }, [])
 
-    const containerWidth =
-        device === "laptop" ? 130 : 80
+    const containerWidth = device === "laptop" ? 130 : 70
+    const dashCount = device === "laptop" ? 24 : 14
 
     const glowWidth = 15
     const startX = -glowWidth
@@ -32,7 +32,7 @@ const SvgForHowItWorksSection = ({ active }: { active: boolean }) => {
             className="relative shrink-0 h-[5px] flex gap-x-[3px] items-center overflow-hidden"
             style={{ width: containerWidth }}
         >
-            {Array.from({ length: 24 }).map((_, i) => (
+            {Array.from({ length: dashCount }).map((_, i) => (
                 <div
                     key={i}
                     className="w-[4px] h-[1.5px] bg-[#2e2e2e]"

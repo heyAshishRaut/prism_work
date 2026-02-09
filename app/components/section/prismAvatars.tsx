@@ -19,45 +19,59 @@ const avatarsItems = [
         row: "rowOne",
         avatars: [
             {
+                no: 1,
                 avatar: avatar1
             },
             {
+                no: 2,
                 avatar: avatar1
             },
             {
+                no: 3,
                 avatar: avatar1
             },
             {
+                no: 4,
                 avatar: avatar1
             },
             {
+                no: 5,
                 avatar: avatar2
             },
             {
+                no: 6,
                 avatar: avatar1
             },
             {
+                no: 7,
                 avatar: avatar1
             },
             {
+                no: 8,
                 avatar: avatar1
             },
             {
+                no: 9,
                 avatar: avatar1
             },
             {
+                no: 10,
                 avatar: avatar1
             },
             {
+                no: 11,
                 avatar: avatar1
             },
             {
+                no: 12,
                 avatar: avatar2
             },
             {
+                no: 13,
                 avatar: avatar1
             },
             {
+                no: 14,
                 avatar: avatar1
             }
         ]
@@ -66,51 +80,67 @@ const avatarsItems = [
         row: "rowTwo",
         avatars: [
             {
+                no: 15,
                 avatar: avatar2
             },
             {
+                no: 16,
                 avatar: avatar1
             },
             {
+                no: 17,
                 avatar: avatar1
             },
             {
+                no: 18,
                 avatar: avatar2
             },
             {
+                no: 19,
                 avatar: avatar1
             },
             {
+                no: 20,
                 avatar: avatar1
             },
             {
+                no: 21,
                 avatar: avatar1
             },
             {
+                no: 22,
                 avatar: avatar2
             },
             {
+                no: 23,
                 avatar: avatar1
             },
             {
+                no: 24,
                 avatar: avatar2
             },
             {
+                no: 25,
                 avatar: avatar1
             },
             {
+                no: 26,
                 avatar: avatar1
             },
             {
+                no: 27,
                 avatar: avatar1
             },
             {
+                no: 28,
                 avatar: avatar2
             },
             {
+                no: 29,
                 avatar: avatar1
             },
             {
+                no: 30,
                 avatar: avatar2
             }
         ]
@@ -119,51 +149,67 @@ const avatarsItems = [
         row: "rowThree",
         avatars: [
             {
+                no: 31,
                 avatar: avatar1
             },
             {
+                no: 32,
                 avatar: avatar1
             },
             {
+                no: 33,
                 avatar: avatar2
             },
             {
+                no: 34,
                 avatar: avatar1
             },
             {
+                no: 35,
                 avatar: avatar1
             },
             {
+                no: 36,
                 avatar: avatar1
             },
             {
+                no: 37,
                 avatar: avatar2
             },
             {
+                no: 38,
                 avatar: avatar1
             },
             {
+                no: 39,
                 avatar: avatar1
             },
             {
+                no: 40,
                 avatar: avatar1
             },
             {
+                no: 41,
                 avatar: avatar1
             },
             {
+                no: 42,
                 avatar: avatar2
             },
             {
+                no: 43,
                 avatar: avatar1
             },
             {
+                no: 44,
                 avatar: avatar1
             },
             {
+                no: 45,
                 avatar: avatar2
             },
             {
+                no: 46,
                 avatar: avatar1
             }
         ]
@@ -203,24 +249,67 @@ const Info = () => {
     )
 }
 
-const Avatar = ({avatar, showTooltip}: { avatar: StaticImageData; showTooltip?: boolean }) => {
-    const avatarNode = (
-        <div className={`relative h-[32px] w-[32px] laptop:h-[46px] laptop:w-[46px] rounded-[8px] overflow-hidden border border-transparent grayscale ${showTooltip ? "tablet:hover:border-[#dadada] tablet:hover:grayscale-0 cursor-pointer" : ""} transition-all duration-150`}>
-            <Image src={avatar} alt="" fill className="object-cover" />
-        </div>
-    )
-
-    if (!showTooltip) return avatarNode
-
-    return <HelpHint content={<Info />}>{avatarNode}</HelpHint>
-}
 
 const PrismAvatars = () => {
+    const [current, setCurrent] = useState<null | number>(null)
+
+    const Avatar = ({
+                        no,
+                        avatar,
+                        showTooltip,
+                    }: {
+        no: number
+        avatar: StaticImageData
+        showTooltip?: boolean
+    }) => {
+        const isActive = current === no
+
+        const avatarNode = (
+            <div
+                className={`
+        relative h-[32px] w-[32px]
+        laptop:h-[46px] laptop:w-[46px]
+        rounded-[8px] overflow-hidden
+        border transition-all duration-150
+
+        ${isActive
+                    ? "border-white grayscale-0"
+                    : "border-transparent grayscale"}
+
+        ${showTooltip
+                    ? "laptop:hover:border-[#dadada] laptop:hover:grayscale-0 cursor-pointer"
+                    : ""}
+      `}
+            >
+                <Image src={avatar} alt="" fill className="object-cover" />
+            </div>
+        )
+
+        if (!showTooltip) return avatarNode
+
+        return (
+            <HelpHint
+                content={<Info />}
+                open={isActive}
+                onOpenChange={(open) => {
+                    if (open) setCurrent(no)
+                    else setCurrent(null)
+                }}
+            >
+                {avatarNode}
+            </HelpHint>
+        )
+    }
+
+
     return (
-        <div className={`tablet:h-[550px] laptop:h-[855px] px-[20px] tablet:px-[40px] py-[60px] tablet:py-[80px] laptop:py-[100px] w-full flex items-center justify-center`}>
+        <div
+            className={`tablet:h-[550px] laptop:h-[855px] px-[20px] tablet:px-[40px] py-[60px] tablet:py-[80px] laptop:py-[100px] w-full flex items-center justify-center`}>
             <TooltipProvider delayDuration={100}>
-                <div className={`relative flex items-center justify-center w-full max-w-[450px] tablet:max-w-[800px] laptop:max-w-[1040px]`}>
-                    <div className={`z-2 overflow-hidden absolute h-[150px] tablet:h-[250px] w-full bottom-0`}>
+                <div
+                    className={`relative flex items-center justify-center w-full max-w-[450px] tablet:max-w-[800px] laptop:max-w-[1040px]`}>
+                    <div
+                        className={`z-2 overflow-hidden absolute h-[100px] tablet:h-[150px] laptop:h-[250px] w-full bottom-0`}>
                         <ParticlesBackground/>
                     </div>
                     <div className={`relative flex flex-col items-center gap-[12px] laptop:gap-[20px]`}>
@@ -233,6 +322,7 @@ const PrismAvatars = () => {
                                             return (
                                                 <Avatar
                                                     key={i}
+                                                    no={el.no}
                                                     avatar={el.avatar}
                                                     showTooltip={el.avatar === avatar1}
                                                 />
@@ -244,18 +334,20 @@ const PrismAvatars = () => {
                         }
 
                         <div className="z-10 w-full flex justify-between flex-wrap gap-[12px] laptop:gap-[20px]">
-                            <Avatar avatar={avatar1} showTooltip/>
-                            <Avatar avatar={avatar2}/>
+                            <Avatar no={47} avatar={avatar1} showTooltip/>
+                            <Avatar no={48} avatar={avatar2}/>
                         </div>
 
                         <div className="z-10 w-full flex justify-between flex-wrap gap-[12px] laptop:gap-[20px]">
-                            <Avatar avatar={avatar1} showTooltip/>
-                            <Avatar avatar={avatar1} showTooltip/>
+                            <Avatar no={49} avatar={avatar1} showTooltip/>
+                            <Avatar no={50} avatar={avatar1} showTooltip/>
                         </div>
 
-                        <div className={`hidden tablet:flex h-[38px] laptop:h-[46px] w-full justify-between flex-wrap gap-[10px] tablet:gap-[20px]`}></div>
+                        <div
+                            className={`hidden tablet:flex h-[38px] laptop:h-[46px] w-full justify-between flex-wrap gap-[10px] tablet:gap-[20px]`}></div>
 
-                        <div className={`hidden laptop:flex h-[38px] laptop:h-[46px] w-full justify-between flex-wrap gap-[10px] tablet:gap-[20px]`}></div>
+                        <div
+                            className={`hidden laptop:flex h-[38px] laptop:h-[46px] w-full justify-between flex-wrap gap-[10px] tablet:gap-[20px]`}></div>
 
                         <div className="
                         absolute -bottom-4 tablet:bottom-0
@@ -274,7 +366,8 @@ const PrismAvatars = () => {
                                     priority
                                 />
                                 <div
-                                    className={`absolute bottom-0 h-[30px] tablet:h-[95px] laptop:h-[127px] w-full bg-[linear-gradient(to_bottom,transparent_0%,rgba(18,18,18,0.8)_60%,#121212_100%)]`}></div>
+                                    className="absolute bottom-0 laptop:bottom-[10px] h-[18px] tablet:h-[60px] laptop:h-[90px] w-full bg-[linear-gradient(to_bottom,transparent_0%,rgba(18,18,18,0.35)_25%,rgba(18,18,18,0.7)_45%,rgba(18,18,18,0.9)_65%,rgba(18,18,18,0.98)_90%,#121212_100%)]"/>
+
                             </div>
                         </div>
                     </div>

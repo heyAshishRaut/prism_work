@@ -59,9 +59,6 @@ const HowItWorksSectionComponent = () => {
     const delayMap = [3000, 2000, 3000, 2000, 3000]
     const delay = delayMap[activeIndex]
 
-    const containerRef = useRef<HTMLDivElement>(null)
-    const itemRefs = useRef<(HTMLDivElement | null)[]>([])
-
     const isMobile =
         typeof window !== "undefined" && window.innerWidth < 810
 
@@ -75,19 +72,18 @@ const HowItWorksSectionComponent = () => {
 
 
     return (
-        <div className="thin-scrollbar scroll-smooth relative w-full h-[50px] tablet:h-[61px] flex items-center overflow-x-auto tablet:overflow-hidden flex-nowrap [-webkit-overflow-scrolling:touch]">
+        <div className="thin-scrollbar scroll-smooth relative w-full h-[40px] tablet:h-[50px] laptop:h-[61px] flex items-center overflow-x-auto tablet:overflow-hidden flex-nowrap [-webkit-overflow-scrolling:touch]">
 
             {/* CARD 1 */}
-            <div
-                className="z-20 relative shrink-0 tablet:shrink h-full w-[180px] tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
+            <div className="z-20 relative shrink-0 tablet:shrink h-full px-[30px] tablet:px-0 tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 0}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
                     <Image src={seeIt} alt="" height={28} width={28}
-                           className={`${activeIndex === 0 ? "grayscale-0" : "grayscale"} w-[18px] h-[18px] tablet:w-[24px] tablet:h-[24px] laptop:w-[28px] laptop:h-[28px]`}/>
+                           className={`${activeIndex === 0 ? "grayscale-0" : "grayscale"} w-[18px] h-[18px] tablet:w-[20px] tablet:h-[20px] laptop:w-[28px] laptop:h-[28px]`}/>
                     <div
                         className="
                         font-archivo font-medium
-                        text-[15px] tablet:text-[20px] laptop:text-[24px]
+                        text-[15px] tablet:text-[18px] laptop:text-[24px]
                         leading-[120%] tracking-[-2%]
                         "
                     >
@@ -104,15 +100,15 @@ const HowItWorksSectionComponent = () => {
 
             {/* CARD 2 */}
             <div
-                className="relative shrink-0 tablet:shrink h-full w-[180px] tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
+                className="relative shrink-0 tablet:shrink h-full px-[30px] tablet:px-0 tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 2}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
                     <Image src={understandItActive} alt="" height={28} width={28}
-                           className={`${activeIndex === 2 ? "grayscale-0" : "grayscale"} w-[18px] h-[18px] tablet:w-[24px] tablet:h-[24px] laptop:w-[28px] laptop:h-[28px]`}/>
+                           className={`${activeIndex === 2 ? "grayscale-0" : "grayscale"} w-[18px] h-[18px] tablet:w-[20px] tablet:h-[20px] laptop:w-[28px] laptop:h-[28px]`}/>
                     <div
                         className="
                         font-archivo font-medium
-                        text-[15px] tablet:text-[20px] laptop:text-[24px]
+                        text-[15px] tablet:text-[18px] laptop:text-[24px]
                         leading-[120%] tracking-[-2%]
                         "
                     >
@@ -129,15 +125,15 @@ const HowItWorksSectionComponent = () => {
 
             {/* CARD 3 */}
             <div
-                className="relative shrink-0 tablet:shrink h-full w-[180px] tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
+                className="relative shrink-0 tablet:shrink h-full px-[30px] tablet:px-0 tablet:w-[280px] rounded-[10px] bg-[#1e1e1e] border-b border-[#2e2e2e] overflow-hidden">
                 <LoaderOverlay active={activeIndex === 4}/>
                 <div className="relative z-10 flex items-center justify-center gap-x-[6px] h-full">
                     <Image src={buildItActive} alt="" height={28} width={28}
-                           className={`${activeIndex === 4 ? "grayscale-0" : "grayscale"} w-[18px] h-[18px] tablet:w-[24px] tablet:h-[24px] laptop:w-[28px] laptop:h-[28px]`}/>
+                           className={`${activeIndex === 4 ? "grayscale-0" : "grayscale"} w-[18px] h-[18px] tablet:w-[20px] tablet:h-[20px] laptop:w-[28px] laptop:h-[28px]`}/>
                     <div
                         className="
                         font-archivo font-medium
-                        text-[15px] tablet:text-[20px] laptop:text-[24px]
+                        text-[15px] tablet:text-[18px] laptop:text-[24px]
                         leading-[120%] tracking-[-2%]
                         "
                     >

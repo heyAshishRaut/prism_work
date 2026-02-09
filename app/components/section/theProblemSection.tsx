@@ -61,7 +61,7 @@ const TheProblemSection = () => {
                     <SectionHeading>You've tried to learn code before. It didn't stick.</SectionHeading>
                 </div>
 
-                <div className={`w-full h-full`}>
+                <div className={`w-full flex justify-center`}>
                     <ResponsiveProblemElement/>
                 </div>
 

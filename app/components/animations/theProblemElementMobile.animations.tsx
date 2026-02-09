@@ -13,7 +13,7 @@ const MobileRive = () => {
     })
 
     return (
-        <div className="relative w-full h-[700px] overflow-hidden">
+        <div className="relative w-full h-[500px] overflow-hidden">
             <RiveComponent className="w-full h-full" />
         </div>
     )
