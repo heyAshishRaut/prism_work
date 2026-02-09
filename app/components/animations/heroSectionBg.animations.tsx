@@ -3,7 +3,7 @@ import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas"
 
 export default function RiveBackground() {
     const { RiveComponent } = useRive({
-        src: "/animations/newHeroBg.riv",
+        src: "/animations/heroSectionBgAnimation.riv",
         autoplay: true,
         layout: new Layout({
             fit: Fit.Fill,
