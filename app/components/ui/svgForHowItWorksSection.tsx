@@ -1,5 +1,4 @@
 "use client"
-
 import { motion } from "framer-motion"
 import { useEffect, useState, useMemo } from "react"
 
@@ -21,61 +20,35 @@ const SvgForHowItWorksSection = ({ active }: { active: boolean }) => {
         return () => window.removeEventListener("resize", update)
     }, [])
 
-    const dashCount = useMemo(() => {
-        switch (device) {
-            case "mobile":
-                return 10
-            case "tablet":
-                return 16
-            case "laptop":
-                return 24
-        }
-    }, [device])
+    const dashedLines = Array.from({ length: 24 })
 
-    const dashedLines = Array.from({ length: dashCount })
+    const containerWidth = 110
+    const glowWidth = 15
 
-    const TOTAL_DURATION = 3
-    const STAGGER = TOTAL_DURATION / dashedLines.length
-    const GLOW_DURATION = 0.25
+    const startX = -glowWidth
+    const endX = containerWidth + glowWidth
 
     return (
-        <div className="w-[50px] laptop:w-[130px] h-[3px] flex items-center gap-x-[3px]">
+        <div className="relative shrink-0 w-[80px] laptop:w-[130px] h-[5px] flex items-center gap-x-[3px] overflow-hidden">
             {dashedLines.map((_, index) => (
-                <motion.div
+                <div
                     key={index}
                     className="w-[4px] bg-[#2e2e2e]"
-                    style={{ height: "1.5px", transformOrigin: "center" }}
-                    animate={
-                        active
-                            ? {
-                                backgroundColor: ["#2e2e2e", "#ffffff", "#ffffff"],
-                                scaleY: [1, 2, 1],
-                            }
-                            : {
-                                backgroundColor: "#2e2e2e",
-                                scaleY: 1,
-                            }
-                    }
-                    transition={
-                        active
-                            ? {
-                                backgroundColor: {
-                                    duration: GLOW_DURATION,
-                                    delay: index * STAGGER,
-                                    ease: "linear",
-                                },
-                                scaleY: {
-                                    duration: GLOW_DURATION,
-                                    delay: index * STAGGER,
-                                    ease: "easeInOut",
-                                },
-                                repeat: Infinity,
-                                repeatDelay: TOTAL_DURATION - STAGGER,
-                            }
-                            : { duration: 0 }
-                    }
+                    style={{ height: "1.5px" }}
                 />
             ))}
+
+            {active && (
+                <motion.div
+                    className="absolute h-[5px] w-[15px] rounded-full bg-[linear-gradient(to_left,white_0%,rgba(255,255,255,0.6)_40%,rgba(255,255,255,0)_100%)]"
+                    initial={{ x: startX, opacity: 1 }}
+                    animate={{ x: endX, opacity: 1 }}
+                    transition={{
+                        duration: 2,
+                        ease: "linear",
+                    }}
+                />
+            )}
         </div>
     )
 }

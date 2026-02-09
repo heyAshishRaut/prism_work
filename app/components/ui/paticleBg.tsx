@@ -8,7 +8,7 @@ type ParticlesBackgroundProps = {
 }
 
 const ParticlesBackground = ({ className = "" }: ParticlesBackgroundProps) => {
-    const containerId = useId().replace(/:/g, "") // remove invalid chars
+    const containerId = useId().replace(/:/g, "")
 
     const initParticles = () => {
         // @ts-ignore
@@ -49,7 +49,7 @@ const ParticlesBackground = ({ className = "" }: ParticlesBackgroundProps) => {
             />
             <div
                 id={containerId}
-                className={`absolute bottom-0 z-20 w-full h-[200px] tablet:h-[300px] ${className}`}
+                className={`absolute bottom-0 z-20 w-full h-[200px] tablet:h-[300px] pointer-events-none ${className}`}
             />
         </>
     )

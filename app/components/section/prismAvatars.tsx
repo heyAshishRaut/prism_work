@@ -218,7 +218,7 @@ const Avatar = ({avatar, showTooltip}: { avatar: StaticImageData; showTooltip?: 
 const PrismAvatars = () => {
     return (
         <div
-            className={`relative px-[20px] tablet:px-[40px] py-[60px] tablet:py-[80px] laptop:py-[100px] w-full flex items-center justify-center`}>
+            className={`relative tablet:h-[550px] laptop:h-[855px] px-[20px] tablet:px-[40px] py-[60px] tablet:py-[80px] laptop:py-[100px] w-full flex items-center justify-center`}>
             <TooltipProvider delayDuration={100}>
                 <div className={`flex items-center justify-center w-full max-w-[450px] tablet:max-w-[800px] laptop:max-w-[1040px]`}>
                     <div
@@ -264,7 +264,7 @@ const PrismAvatars = () => {
                         w-full
                         max-w-[200px]
                         sm:max-w-[300px]
-                        tablet:max-w-[500px]
+                        tablet:max-w-[450px]
                         laptop:max-w-[868px]
                         aspect-[868/233]
                         ">

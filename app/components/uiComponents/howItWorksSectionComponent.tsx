@@ -13,33 +13,35 @@ const TOTAL_STEPS = 5
 const ShimmerText = ({text, active,}: { text: string; active: boolean }) => {
     return (
         <span className="relative inline-block">
-            <span className="text-[#8a8a8a]">{text}</span>
+        <span className="text-[#8a8a8a]">{text}</span>
             {
                 active && (
-                    <motion.span
-                        className="
-                    absolute inset-0
-                    text-white
-                    pointer-events-none
-                    "
-                        style={{
-                            WebkitMaskImage:
-                                "linear-gradient(110deg, transparent 40%, white 50%, transparent 60%)",
-                            WebkitMaskSize: "200% 100%",
-                            maskImage:
-                                "linear-gradient(110deg, transparent 40%, white 50%, transparent 60%)",
-                            maskSize: "200% 100%",
-                        }}
-                        // @ts-ignore
-                        initial={{opacity: 0, WebkitMaskPosition: "200% 0%", maskPosition: "200% 0%"}}
-                        // @ts-ignore
-                        animate={{opacity: 1, WebkitMaskPosition: "-200% 0%", maskPosition: "-200% 0%"}}
-                        transition={{
-                            duration: 1,
-                            ease: "linear",
-                            repeat: Infinity,
-                        }
-                        }
+                    <motion.span className="absolute inset-0 text-white pointer-events-none"
+                                 style={{
+                                     WebkitMaskImage:
+                                         "linear-gradient(110deg, transparent 30%, white 50%, transparent 70%)",
+                                     WebkitMaskSize: "250% 100%",
+                                     maskImage:
+                                         "linear-gradient(110deg, transparent 30%, white 50%, transparent 70%)",
+                                     maskSize: "250% 100%",
+                                 }}
+                                 initial={{
+                                     opacity: 0,
+                                     // @ts-ignore
+                                     WebkitMaskPosition: "200% 0%",
+                                     maskPosition: "200% 0%",
+                                 }}
+                                 animate={{
+                                     opacity: 1,
+                                     // @ts-ignore
+                                     WebkitMaskPosition: "-200% 0%",
+                                     maskPosition: "-200% 0%",
+                                 }}
+                                 transition={{
+                                     delay: 0.4,
+                                     duration: 5,
+                                     ease: "linear",
+                                 }}
                     >
                         {text}
                     </motion.span>
@@ -49,16 +51,20 @@ const ShimmerText = ({text, active,}: { text: string; active: boolean }) => {
     )
 }
 
+
 const HowItWorksSectionComponent = () => {
     const [activeIndex, setActiveIndex] = useState(0)
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % TOTAL_STEPS)
-        }, 3000)
+    const delayMap = [3000, 2000, 3000, 2000, 3000]
+    const delay = delayMap[activeIndex]
 
-        return () => clearInterval(interval)
-    }, [])
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setActiveIndex((prev) => (prev + 1) % TOTAL_STEPS)
+        }, delay)
+
+        return () => clearTimeout(timeout)
+    }, [activeIndex, delay])
 
     return (
         <div

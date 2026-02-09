@@ -53,9 +53,18 @@ const HowItWorksSection = () => {
                     </div>
 
                     <div className={`w-full flex flex-col gap-y-[16px] tablet:gap-y-[24px]`}>
-                        <div className={`w-full h-[300px] tablet:h-[668px] rounded-[12px] bg-[#1a1a1a] border border-[#262626] flex items-center justify-center`}>
-                            <div className={`font-work-sans text-[16px] tablet:text-[18px] laptop:text-[20px] leading-[150%] tracking-[-2%] text-white/40`}>Video Embed</div>
-                        </div>
+
+                            <div className="w-full aspect-video overflow-hidden rounded-[12px] border border-white/10 bg-black">
+                                <iframe
+                                    className="w-full h-full"
+                                    src="https://www.youtube.com/embed/8AHPXm9Y6mI"
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                />
+                            </div>
+
                         <div className={`w-full laptop:max-w-[836px] text-center tablet:text-start`}>
                             <Text18px>Concepts come alive through animated visual explanations. Watch algorithms run step-by-step. See data flow through your code.</Text18px>
                         </div>

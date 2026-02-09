@@ -13,8 +13,8 @@ const UpskillTeam = () => {
                         <div className={`font-work-sans text-center tablet:text-start text-[14px] tablet:text-[15px] text-[#969696] leading-[125%] tracking-[-4%]`}>Prism for Teams gives your developers the skills they need — with learning analytics that show real competency, not just completion.</div>
                     </div>
 
-                    <div className={`relative cursor-pointer hover:bg-white/5 bg-[linear-gradient(300deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(#242428,#242428)] overflow-hidden bg-[linear-gradient(112deg,rgba(255,255,255,0.1)_0%,rgba(225,225,225,0.1)_100%)] hover:bg-[linear-gradient(300deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0)_100%),linear-gradient(#2B2B30,#2B2B30)] px-[16px] tablet:px-[20px] py-[8px] tablet:py-[10px] rounded-full border border-white/8`}>
-                        <div className={`z-10 font-work-sans text-[14px] tablet:text-[15px] laptop:text-[16px] font-medium leading-[125%] tracking-[-4%]`}><span className={`text-white`}>Learn More</span></div>
+                    <div className={`text-white hover:text-white/70 relative cursor-pointer bg-[linear-gradient(300deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(#242428,#242428)] overflow-hidden hover:bg-[linear-gradient(300deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.1)_100%),linear-gradient(#000000,#00000050)] px-[16px] tablet:px-[20px] py-[8px] tablet:py-[10px] rounded-full border border-white/8`}>
+                        <div className={`z-10 font-work-sans text-[14px] tablet:text-[15px] laptop:text-[16px] font-medium leading-[125%] tracking-[-4%]`}><span>Learn More</span></div>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,12 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* force-disable pointer events for particles */
+canvas.particles-js-canvas-el {
+    pointer-events: none !important;
+}
+
+
 [data-radix-popper-arrow] {
     filter: none;               /* remove any implicit effects */
 }

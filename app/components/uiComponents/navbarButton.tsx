@@ -21,7 +21,7 @@ const NavbarButton = ({ open, setOpen }: {
         <div className={`h-full`}>
             {/* TEXT */}
             <div
-                className={`hidden tablet:flex cursor-pointer h-full px-[24px] items-center rounded-full bg-white hover:bg-white/85 transition-all ease-in duration-75 text-black font-work-sans font-medium tablet:text-[15px] laptop:text-[16px] leading-[125%] tracking-[-4%]`}>Start
+                className={`hidden tablet:flex cursor-pointer h-full px-[24px] items-center rounded-full bg-white hover:bg-white/70 transition-all ease-in duration-75 text-black font-work-sans font-medium tablet:text-[15px] laptop:text-[16px] leading-[125%] tracking-[-4%]`}>Start
                 Learning Free
             </div>
 
@@ -64,7 +64,7 @@ const NavbarButton = ({ open, setOpen }: {
                                 ))}
 
                                 <div
-                                    className={`flex cursor-pointer h-full w-full py-[12px] items-center justify-center rounded-full bg-white hover:bg-white/85 transition-all ease-in duration-75 text-black font-work-sans font-medium text-[15px] leading-[125%] tracking-[-4%]`}>Start
+                                    className={`flex cursor-pointer h-full w-full py-[12px] items-center justify-center rounded-full bg-white hover:bg-white/70 transition-all ease-in duration-75 text-black font-work-sans font-medium text-[15px] leading-[125%] tracking-[-4%]`}>Start
                                     Learning Free
                                 </div>
                             </motion.div>
